@@ -37,12 +37,13 @@ gitstatus=''
 which git > /dev/null
 if [ $? -eq 0 ]; then
     alias ga='git add'
-    alias gg='git gui'
     alias gc='git commit'
+    alias gf='git fetch'
+    alias gg='git gui'
     alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    alias gm='git merge --no-ff'
     alias gp='git push'
     alias gst='git status'
-    alias gm='git merge --no-ff'
 
     if [ -f ~/.zsh-git-prompt/zshrc.sh ]; then
         source ~/.zsh-git-prompt/zshrc.sh
