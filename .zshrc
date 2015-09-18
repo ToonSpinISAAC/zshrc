@@ -13,7 +13,20 @@ compinit
 setopt prompt_subst
 autoload -U colors && colors
 
-alias ls='ls --color=auto'
+alias ls='ls -aF --color=auto'
+
+alias runas='sudo -H -u'
+alias rr='runas root'
+
+alias ga='git add'
+alias gg='git gui'
+alias gc='git commit'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gp='git push'
+alias gst='git status'
+alias gm='git merge --no-ff'
+ff() { find .  -name "$@" }
+ffi() { find .  -iname "$@" }
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
