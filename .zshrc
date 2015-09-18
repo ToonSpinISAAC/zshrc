@@ -17,14 +17,6 @@ alias ls='ls -aF --color=auto'
 
 alias runas='sudo -H -u'
 alias rr='runas root'
-
-alias ga='git add'
-alias gg='git gui'
-alias gc='git commit'
-alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gp='git push'
-alias gst='git status'
-alias gm='git merge --no-ff'
 ff() { find .  -name "$@" }
 ffi() { find .  -iname "$@" }
 
@@ -38,12 +30,20 @@ precmd() {
     else
         exitcode_color='green'
     fi
-    export PATH=$PATH:/home/toon/tools
+    export PATH=$PATH:~/tools
 }
 
 gitstatus=''
 which git > /dev/null
 if [ $? -eq 0 ]; then
+    alias ga='git add'
+    alias gg='git gui'
+    alias gc='git commit'
+    alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    alias gp='git push'
+    alias gst='git status'
+    alias gm='git merge --no-ff'
+
     if [ -f ~/.zsh-git-prompt/zshrc.sh ]; then
         source ~/.zsh-git-prompt/zshrc.sh
         ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%}"
