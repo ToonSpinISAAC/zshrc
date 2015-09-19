@@ -17,6 +17,14 @@ alias ls='ls -aF --color=auto'
 
 alias runas='sudo -H -u'
 alias rr='runas root'
+
+alias ..='cd ..'
+alias ...='cd .. && cd ..'
+alias ....='cd .. && cd .. && cd ..'
+alias .....='cd .. && cd .. && cd .. && cd ..'
+alias ......='cd .. && cd .. && cd .. && cd .. && cd ..'
+alias .......='cd .. && cd .. && cd .. && cd .. && cd .. && cd ..'
+
 ff() { find .  -name "$@" }
 ffi() { find .  -iname "$@" }
 
