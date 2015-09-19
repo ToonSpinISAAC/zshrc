@@ -52,6 +52,7 @@ if [ $? -eq 0 ]; then
     alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     alias gm='git merge --no-ff'
     alias gp='git push'
+    alias gsh='git show'
     alias gst='git status'
 
     if [ -f ~/.zsh-git-prompt/zshrc.sh ]; then
