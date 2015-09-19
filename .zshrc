@@ -46,6 +46,7 @@ which git > /dev/null
 if [ $? -eq 0 ]; then
     alias ga='git add'
     alias gc='git commit'
+    alias gd='git diff'
     alias gf='git fetch'
     alias gg='git gui'
     alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -56,7 +57,8 @@ if [ $? -eq 0 ]; then
     if [ -f ~/.zsh-git-prompt/zshrc.sh ]; then
         source ~/.zsh-git-prompt/zshrc.sh
         ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%}"
-        gitstatus=' $(git_super_status)'
+        ZSH_THEME_GIT_PROMPT_PREFIX=" $ZSH_THEME_GIT_PROMPT_PREFIX"
+        gitstatus='$(git_super_status)'
     fi
 fi
 
