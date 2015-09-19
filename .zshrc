@@ -66,3 +66,12 @@ fi
 exitcode='%{$fg_bold[$exitcode_color]%}$exitcode_value%{$reset_color%}%b'
 PROMPT="%{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}%0~ %(#.#.$)%{$reset_color%}%b "
 RPROMPT="[$exitcode]$gitstatus"
+
+cu() { sudo -u $1 zsh -i 2>/dev/null }
+compdef _users cu
+
+current_user=`whoami`
+if [[ $current_user != `basename $HOME` ]]; then
+    HOME="/home/$current_user"
+    cd
+fi
