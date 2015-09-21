@@ -40,6 +40,9 @@ alias .......='cd .. && cd .. && cd .. && cd .. && cd .. && cd ..'
 ff() { find .  -name "$@" }
 ffi() { find .  -iname "$@" }
 
+# create a directory and cd into it
+mdcd() { mkdir $1 && cd $1 }
+
 
 # key bindings -----------------------------------------------------------------
 
