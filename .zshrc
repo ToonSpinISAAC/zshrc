@@ -20,7 +20,7 @@ autoload -U colors && colors
 # aliases ----------------------------------------------------------------------
 
 # bring color back to ls, also list hidden files and add indicators like / and *
-alias ls='ls -aF --color=auto'
+alias ls='ls -AF --color=auto'
 
 # "runas USER <COMMAND>" runs COMMAND as USER, with homedir set
 alias runas='sudo -H -u'
