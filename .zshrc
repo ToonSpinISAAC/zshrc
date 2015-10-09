@@ -79,6 +79,7 @@ if [ $? -eq 0 ]; then
 
     # handy aliases
     alias ga='git add'
+    alias gch='git checkout'
     alias gc='git commit'
     alias gd='git diff'
     alias gf='git fetch'
