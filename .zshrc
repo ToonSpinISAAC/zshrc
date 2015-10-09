@@ -112,20 +112,3 @@ exitcode='%{$fg_bold[$exitcode_color]%}$exitcode_value%{$reset_color%}%b'
 # set left and right prompts
 PROMPT="%{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}%0~ %(#.#.$)%{$reset_color%}%b "
 RPROMPT="[$exitcode]$gitstatus"
-
-
-# User switching ---------------------------------------------------------------
-
-# Use "cu USER" to switch to a different user, but using your zsh configuration
-# instead of theirs. Their home directory will be set to YOUR home directory,
-# otherwise the "using your zsh configuration" part won't work. This is fixed at
-# the end of this script.
-cu() { sudo -u $1 zsh -i 2>/dev/null }
-compdef _users cu
-
-# At the end of the startup process, fix the home directory and "cd" there.
-current_user=`whoami`
-if [[ $current_user != `basename $HOME` ]]; then
-    HOME="/home/$current_user"
-    cd
-fi
