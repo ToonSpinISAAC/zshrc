@@ -43,6 +43,11 @@ ffi() { find .  -iname "$@" }
 # create a directory and cd into it
 mdcd() { mkdir -p $1 && cd $1 }
 
+# grep and ls
+grepls() { grep -rl "$1" . | xargs ls -lrt }
+
+# grep and rm
+greprm() { grep -rl "$1" . | xargs rm }
 
 # key bindings -----------------------------------------------------------------
 
