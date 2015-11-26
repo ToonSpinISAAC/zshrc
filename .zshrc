@@ -76,9 +76,13 @@ precmd() {
         exitcode_color='green'
     fi
 
-    # add "tools" directory to path
-    export PATH=$PATH:~/tools
 }
+
+# add "tools" directory to path
+export PATH=$PATH:~/tools
+
+# remove duplicates from path (http://unix.stackexchange.com/questions/14895/#comment137380_14896)
+PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
 
 # Git stuff --------------------------------------------------------------------
