@@ -27,6 +27,7 @@ alias grep='grep --color=auto'
 
 # "runas USER <COMMAND>" runs COMMAND as USER, with homedir set
 alias runas='sudo -H -u'
+compdef _users runas
 
 # handy alias for "sudo"
 alias rr='runas root'
