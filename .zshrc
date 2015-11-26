@@ -22,6 +22,9 @@ autoload -U colors && colors
 # bring color back to ls, also list hidden files and add indicators like / and *
 alias ls='ls -AF --color=auto'
 
+# bring color back to grep
+alias grep='grep --color=auto'
+
 # "runas USER <COMMAND>" runs COMMAND as USER, with homedir set
 alias runas='sudo -H -u'
 
