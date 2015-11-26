@@ -76,6 +76,10 @@ precmd() {
         exitcode_color='green'
     fi
 
+    # set terminal window title to current working directory
+    local userinfo=$( pwd | sed "s#$HOME#~#g" )
+    userinfo="$USER@$HOST $userinfo"
+    printf "\033];%s\07" $userinfo
 }
 
 # add "tools" directory to path
