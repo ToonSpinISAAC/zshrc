@@ -16,6 +16,12 @@ compinit
 setopt prompt_subst
 autoload -U colors && colors
 
+# case insensitive tab completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# menu-style tab completion
+zstyle ':completion:*' menu select
+
 
 # aliases ----------------------------------------------------------------------
 
