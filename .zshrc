@@ -59,6 +59,16 @@ grepls() { grep -rl "$1" . | xargs ls -lrt }
 # grep and rm
 greprm() { grep -rl "$1" . | xargs rm }
 
+
+# autocompletion ---------------------------------------------------------------
+
+_ssh_completion() {
+    [ -f ~/hostnames.txt ] && compadd $( grep "$1" ~/hostnames.txt )
+    compadd $( grep "$1" /etc/hosts | awk 'BEGIN {OFS="\n"} /^\s*[1-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ {for (i=2; i<=NF; i++) { if ($i ~ /#/) break; print $i; }}' )
+}
+compdef _ssh_completion ssh
+
+
 # key bindings -----------------------------------------------------------------
 
 # use Ctrl+arrow left and Ctrl+arrow right to move between words
